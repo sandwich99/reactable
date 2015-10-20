@@ -727,9 +727,7 @@ window.ReactDOM["default"] = window.ReactDOM;
                 // Can't use React.Children.map since that doesn't return a proper array
                 var columns = [];
                 _react['default'].Children.forEach(component.props.children, function (th) {
-                    if (typeof th.props.children === 'string') {
-                        columns.push(th.props.children);
-                    } else if (typeof th.props.column === 'string') {
+                    if (typeof th.props.column === 'string') {
                         columns.push({
                             key: th.props.column,
                             label: th.props.children,

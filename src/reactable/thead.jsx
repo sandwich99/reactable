@@ -8,9 +8,7 @@ export class Thead extends React.Component {
         // Can't use React.Children.map since that doesn't return a proper array
         let columns = [];
         React.Children.forEach(component.props.children, th => {
-            if (typeof th.props.children === 'string') {
-                columns.push(th.props.children);
-            } else if (typeof th.props.column === 'string') {
+            if (typeof th.props.column === 'string') {
                 columns.push({
                     key: th.props.column,
                     label: th.props.children,
